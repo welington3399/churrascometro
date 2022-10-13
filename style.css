@@ -2,15 +2,26 @@
     margin: 0;
     padding: 0;
 }
+ body{
+    background-image: url("fundo.jpg");
+    background-color: #8e7c0c;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%; 
+ }
+
+#infoo{
+    float: right;
+}
 
 #fundo{
-    background-image: url("imagens/fundo.jpg");
-    background-color: #cccccc;
-    background-position: center;
-    background-size: cover;
-    position: fixed;
-    height: 100vh;
-    width: 100%;
+    
+    /*display: flex;*/
+    flex-direction: row-reverse;
+    
+    justify-content: center;
+    align-items: center;
 }
 
 .separador{
@@ -43,6 +54,7 @@ input{
 button{
     border-radius: 0.3 solid rgb(166, 165, 165);
     padding: 5px;
+    margin: 5px;
 }
 
 .format{
@@ -57,7 +69,10 @@ button{
 }
 
 #resultado2{
+    margin: 5px;
     display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 #divChurras{
@@ -65,7 +80,7 @@ button{
     margin: 0 auto;
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 15px;
+    padding: 5px;
     border-radius: 20px;
     background-color: rgb(255, 188, 17);
 }
@@ -75,7 +90,75 @@ button{
     margin: 0 auto;
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 15px;
+    padding: 5px;
     border-radius: 20px;
     background-color: rgb(255, 188, 17);
+}
+
+#divSemAlcool{
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 5px;
+    border-radius: 20px;
+    background-color: rgb(255, 188, 17);
+}
+
+/* TESTE BALÃO */
+.texto{
+    font-size: 1.2em; 
+}
+
+.ali{
+    text-align: center;
+    margin: 5px;
+}
+
+.tabela{
+    
+    margin: 0 auto;
+    border: 2px solid black;
+}
+
+table tr td{
+    
+    padding: 5px;
+    border: 2px solid black;
+}
+
+.animacao{
+    margin-bottom:15px;
+    margin-right: 15px;
+    font-weight: 700;
+    background-color: rgb(255, 188, 17);
+    padding: 15px;
+    border-radius: 20px;
+    animation: mymove 1.3s;
+}
+
+
+@keyframes mymove{
+    0%{
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    50%{
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1200px){
+    #fundo{
+        display: flex;
+        flex-direction: column-reverse;
+        
+        justify-content: center;
+        align-items: center;
+    }
 }

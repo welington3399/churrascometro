@@ -14,29 +14,29 @@ function calcular(){
     let horas = inputHoras.value;
 
     let qtdTotalCarnes = carnesPP(horas) * adultos + (carnesPP(horas) / 2 * criancas);
-    let totCerveja = cervejaPP(horas) * adultos;
-    let totRefrigerante = refrigerantePP(horas) * adultos + (refrigerantePP(horas) / 2 * criancas);
+    let totAlcolicas = alcolicaPP(horas) * adultos;
+    let totSemAlcool = SemAlcoolPP(horas) * adultos + (SemAlcoolPP(horas) / 2 * criancas);
 
     resultado.innerHTML = `<p><br><b>Voce vai precisar de: </b></p>`
     resultado.innerHTML += `<div class="format">
-        <img class="img_prod" src="imagens/carne.png" alt="">
-        <p>${qtdTotalCarnes/1000}Kg de carne</p>
+        <img class="img_prod" src="carne.png" alt="">
+        <p>${(qtdTotalCarnes/1000).toFixed(2)}Kg de carne</p>
         </div>
         `
     resultado.innerHTML += `<div class="format">
-        <img class="img_prod" src="imagens/lata-de-cerveja.png" alt="">
-        <p>${Math.ceil(totCerveja / 355)} Latas de cerveja</p>
+        <img class="img_prod" src="lata-de-cerveja.png" alt="">
+        <p>${Math.ceil(totAlcolicas / 355)} Bebidas Alcoolicas</p>
         </div>
         `
     resultado.innerHTML += `<div class="format">
-        <img class="img_prod" src="imagens/refrigerante.png" alt="">
-        <p>${Math.ceil(totRefrigerante / 2000)} garrafas de bebidas (2L)</p>
+        <img class="img_prod" src="refrigerante.png" alt="">
+        <p>${Math.ceil(totSemAlcool / 2000)} Bebidas Sem Alcool (2L)</p>
         </div>       
         `
     
-    resultado.innerHTML += `<button href="#resultado2" onclick="mais()">mostrar mais</button>
-                            
-                            `
+    resultado.innerHTML += `<button href="#resultado2" onclick="mais()">mostrar mais</button>`
+
+    resultado.innerHTML += `<button href="#info" onclick="info()">informações</button>`
 }
 
 function carnesPP(horas){
@@ -47,7 +47,7 @@ function carnesPP(horas){
     }
 }
 
-function cervejaPP(horas){
+function alcolicaPP(horas){
     if(horas >= 6){
         return 2000;
     }else{
@@ -55,12 +55,44 @@ function cervejaPP(horas){
     }
 }
 
-function refrigerantePP(horas){
+function SemAlcoolPP(horas){
     if(horas >= 6){
         return 1500;
     }else{
         return 1000;
     }
+}
+
+// BALÃO DE AVISO
+
+function info (){
+    console.log("balao")
+
+    infoo.innerHTML = `
+        <div class="animacao">
+            <p class="ali">tabela de valores usada para calculos</p>
+            <table class="tabela">
+                <tr>
+                    <td></td>
+                    <td>carnes</td>
+                    <td>bebidas alcoolicas</td>
+                    <td>bebidas sem alcool</td>
+                </tr>
+                <tr>
+                    <td>&lt 5h</td>
+                    <td>400g</td>
+                    <td>1200ml</td>
+                    <td>1000ml</td>
+                </tr>
+                <tr>
+                    <td>&gt 6h</td>
+                    <td>600g</td>
+                    <td>2000ml</td>
+                    <td>1500ml</td>
+                </tr>
+            </table>
+        </div>
+    `
 }
 
 //DIVISAO DAS CARNES
@@ -86,16 +118,16 @@ function mais(){
     resultado2.innerHTML =
     `<div  id="divChurras">
         <div class="format">
-            <img class="img_prod" src="imagens/perna-de-porco.png" alt="">
-            <p>${(carneV / 1000)} Kg de carne vermelha</p>
+            <img class="img_prod" src="perna-de-porco.png" alt="">
+            <p>${(carneV / 1000).toFixed(2)} Kg de carne vermelha</p>
         </div>
         <div class="format">
-            <img class="img_prod" src="imagens/linguica.png" alt="">
-            <p>${(linguica / 1000)} Kg de linguiça</p>
+            <img class="img_prod" src="linguica.png" alt="">
+            <p>${(linguica / 1000).toFixed(2)} Kg de linguiça</p>
         </div>
         <div class="format">
-            <img class="img_prod" src="imagens/coxa-de-frango.png" alt="">
-            <p>${(frango / 1000)} Kg de frango</p>
+            <img class="img_prod" src="coxa-de-frango.png" alt="">
+            <p>${(frango / 1000).toFixed(2)} Kg de frango</p>
         </div>
     </div>`
 
@@ -106,52 +138,52 @@ function mais(){
 
     console.log("somando alcoolicas...")
 
-    let totCerveja = cervejaPP(horas) * adultos;
+    let totAlcolicas = alcolicaPP(horas) * adultos;
 
-    let cerveja = totCerveja * 40 /100; 
-    let shoop = totCerveja * 30 /100;
-    let drinks = totCerveja * 30 /100;
+    let cerveja = totAlcolicas * 40 /100; 
+    let shoop = totAlcolicas * 30 /100;
+    let drinks = totAlcolicas * 30 /100;
 
     resultado2.innerHTML +=
     `<div  id="divAlcoolicas">
         <div class="format">
-            <img class="img_prod" src="imagens/lata-de-cerveja2.png" alt="">
+            <img class="img_prod" src="lata-de-cerveja2.png" alt="">
             <p>${Math.ceil(cerveja / 355)} cerveja</p>
         </div>
         <div class="format">
-            <img class="img_prod" src="imagens/cerveja.png" alt="">
+            <img class="img_prod" src="cerveja.png" alt="">
             <p>${Math.ceil(shoop / 355)} shoop</p>
         </div>
         <div class="format">
-            <img class="img_prod" src="imagens/cocktail.png" alt="">
+            <img class="img_prod" src="cocktail.png" alt="">
             <p>${Math.ceil(drinks / 355)} drinks</p>
         </div>
     </div>`
 
-    // DIVISAO DOS REFRIGERANTES
+    // DIVISAO DAS BEBIDAS SEM ALCOOL
     // 30% shoop 40% cerveja 30% dinks
 
     console.log("somando alcoolicas...")
 
-    let totRefrigerante = refrigerantePP(horas) * adultos + (refrigerantePP(horas) / 2 * criancas);
+    let totSemAlcool = SemAlcoolPP(horas) * adultos + (SemAlcoolPP(horas) / 2 * criancas);
 
-    let coca = totRefrigerante * 60 /100; 
-    let sprite = totCerveja * 10 /100;
-    let guarana = totCerveja * 30 /100;
+    let refrigerante = totSemAlcool * 50 /100; 
+    let suco = totSemAlcool * 30 /100;
+    let agua = totSemAlcool * 20 /100;
 
     resultado2.innerHTML +=
-    `<div  id="divAlcoolicas">
+    `<div  id="divSemAlcool">
         <div class="format">
-            <img class="img_prod" src="imagens/coca.png" alt="">
-            <p>${Math.ceil(coca / 2000)} coca-cola</p>
+            <img class="img_prod" src="coca.png" alt="">
+            <p>${Math.ceil(refrigerante / 2000)} refrigerante</p>
         </div>
         <div class="format">
-            <img class="img_prod" src="imagens/cerveja.png" alt="">
-            <p>${Math.ceil(guarana / 2000)} guarana</p>
+            <img class="img_prod" src="suco.png" alt="">
+            <p>${Math.ceil(suco / 2000)} suco</p>
         </div>
         <div class="format">
-            <img class="img_prod" src="imagens/cocktail.png" alt="">
-            <p>${Math.ceil(sprite / 355)} sprite</p>
+            <img class="img_prod" src="agua.png" alt="">
+            <p>${Math.ceil(agua / 2000)} agua</p>
         </div>
     </div>`
 }
