@@ -3,7 +3,7 @@
     padding: 0;
 }
  body{
-    background-image: url("fundo.jpg");
+    background-image: url("imagens/fundo.jpg");
     background-color: #8e7c0c;
     background-repeat: no-repeat;
     background-size: cover;

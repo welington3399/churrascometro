@@ -19,17 +19,17 @@ function calcular(){
 
     resultado.innerHTML = `<p><br><b>Voce vai precisar de: </b></p>`
     resultado.innerHTML += `<div class="format">
-        <img class="img_prod" src="carne.png" alt="">
+        <img class="img_prod" src="imagens/carne.png" alt="">
         <p>${(qtdTotalCarnes/1000).toFixed(2)}Kg de carne</p>
         </div>
         `
     resultado.innerHTML += `<div class="format">
-        <img class="img_prod" src="lata-de-cerveja.png" alt="">
+        <img class="img_prod" src="imagens/lata-de-cerveja.png" alt="">
         <p>${Math.ceil(totAlcolicas / 355)} Bebidas Alcoolicas</p>
         </div>
         `
     resultado.innerHTML += `<div class="format">
-        <img class="img_prod" src="refrigerante.png" alt="">
+        <img class="img_prod" src="imagens/refrigerante.png" alt="">
         <p>${Math.ceil(totSemAlcool / 2000)} Bebidas Sem Alcool (2L)</p>
         </div>       
         `
@@ -118,15 +118,15 @@ function mais(){
     resultado2.innerHTML =
     `<div  id="divChurras">
         <div class="format">
-            <img class="img_prod" src="perna-de-porco.png" alt="">
+            <img class="img_prod" src="imagens/perna-de-porco.png" alt="">
             <p>${(carneV / 1000).toFixed(2)} Kg de carne vermelha</p>
         </div>
         <div class="format">
-            <img class="img_prod" src="linguica.png" alt="">
+            <img class="img_prod" src="imagens/linguica.png" alt="">
             <p>${(linguica / 1000).toFixed(2)} Kg de linguiça</p>
         </div>
         <div class="format">
-            <img class="img_prod" src="coxa-de-frango.png" alt="">
+            <img class="img_prod" src="imagens/coxa-de-frango.png" alt="">
             <p>${(frango / 1000).toFixed(2)} Kg de frango</p>
         </div>
     </div>`
@@ -147,15 +147,15 @@ function mais(){
     resultado2.innerHTML +=
     `<div  id="divAlcoolicas">
         <div class="format">
-            <img class="img_prod" src="lata-de-cerveja2.png" alt="">
+            <img class="img_prod" src="imagens/lata-de-cerveja2.png" alt="">
             <p>${Math.ceil(cerveja / 355)} cerveja</p>
         </div>
         <div class="format">
-            <img class="img_prod" src="cerveja.png" alt="">
+            <img class="img_prod" src="imagens/cerveja.png" alt="">
             <p>${Math.ceil(shoop / 355)} shoop</p>
         </div>
         <div class="format">
-            <img class="img_prod" src="cocktail.png" alt="">
+            <img class="img_prod" src="imagens/cocktail.png" alt="">
             <p>${Math.ceil(drinks / 355)} drinks</p>
         </div>
     </div>`
@@ -174,15 +174,15 @@ function mais(){
     resultado2.innerHTML +=
     `<div  id="divSemAlcool">
         <div class="format">
-            <img class="img_prod" src="coca.png" alt="">
+            <img class="img_prod" src="imagens/coca.png" alt="">
             <p>${Math.ceil(refrigerante / 2000)} refrigerante</p>
         </div>
         <div class="format">
-            <img class="img_prod" src="suco.png" alt="">
+            <img class="img_prod" src="imagens/suco.png" alt="">
             <p>${Math.ceil(suco / 2000)} suco</p>
         </div>
         <div class="format">
-            <img class="img_prod" src="agua.png" alt="">
+            <img class="img_prod" src="imagens/agua.png" alt="">
             <p>${Math.ceil(agua / 2000)} agua</p>
         </div>
     </div>`
