@@ -35,8 +35,6 @@ function calcular(){
         `
     
     resultado.innerHTML += `<button href="#resultado2" onclick="mais()">mostrar mais</button>`
-
-    resultado.innerHTML += `<button onclick="toggle()">+info/-info</button>`
 }
 
 function carnesPP(horas){
