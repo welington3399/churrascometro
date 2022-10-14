@@ -36,7 +36,7 @@ function calcular(){
     
     resultado.innerHTML += `<button href="#resultado2" onclick="mais()">mostrar mais</button>`
 
-    resultado.innerHTML += `<button href="#info" onclick="info()">informações</button>`
+    resultado.innerHTML += `<button onclick="toggle()">+informações</button>`
 }
 
 function carnesPP(horas){
@@ -188,4 +188,18 @@ function mais(){
     </div>`
 }
 
+function toggle() {
+    conclusao = document.getElementById("conclusao");
+    novo = document.getElementById("novo");
 
+    if(conclusao.style.display == "none"){
+    conclusao.style.display = "block";
+    novo.style.display = "none";
+    } else {
+    conclusao.style.display = "none";
+    novo.style.display = "block";
+    }
+
+    event.preventDefault();
+
+    }

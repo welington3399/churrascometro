@@ -10,6 +10,34 @@
 </head>
 <body>
     <div id="fundo">
+        <div class="controle2">
+            <div id="conclusao">
+                <p class="ali">tabela de valores usada para calculos</p>
+                <table class="tabela">
+                    <tr>
+                        <td></td>
+                        <td>carnes</td>
+                        <td>bebidas alcoolicas</td>
+                        <td>bebidas sem alcool</td>
+                    </tr>
+                    <tr>
+                        <td>&lt 5h</td>
+                        <td>400g</td>
+                        <td>1200ml</td>
+                        <td>1000ml</td>
+                    </tr>
+                    <tr>
+                        <td>&gt 6h</td>
+                        <td>600g</td>
+                        <td>2000ml</td>
+                        <td>1500ml</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div id="novo">
+            <p></p>
+        </div>
 
         <div id="infoo">
 
@@ -23,6 +51,7 @@
                 <input id="criancas" name="criancas" type="number" placeholder="Crianças">
                 <input id="horas" name="horas" type="number" placeholder="Horas (h)">
                 <button onclick="calcular()">Calcular</button>
+                
         
                 <div id="resultado">
         
@@ -37,6 +66,7 @@
     <div id="resultado2">
   
     </div>
+
 
     <script src="scripts.js"></script>
 </body>

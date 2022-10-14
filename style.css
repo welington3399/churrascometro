@@ -137,6 +137,20 @@ table tr td{
     animation: mymove 1.3s;
 }
 
+#conclusao{
+    display: none;
+    margin-bottom:15px;
+    margin-right: 15px;
+    font-weight: 700;
+    background-color: rgb(255, 188, 17);
+    padding: 15px;
+    border-radius: 20px;
+    animation: mymove 1.3s;
+}
+
+.controle2{
+    float: right;
+}
 
 @keyframes mymove{
     0%{
