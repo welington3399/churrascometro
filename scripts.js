@@ -123,7 +123,7 @@ function mais(){
         </div>
         <div class="format">
             <img class="img_prod" src="imagens/cerveja.png" alt="">
-            <p>${Math.ceil(shoop / 355)} shoop</p>
+            <p>${Math.ceil(shoop / 355)} chopp</p>
         </div>
         <div class="format">
             <img class="img_prod" src="imagens/cocktail.png" alt="">
