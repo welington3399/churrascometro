@@ -1,3 +1,4 @@
+/*CONFIG GERAL*/
 *{
     margin: 0;
     padding: 0;
@@ -5,43 +6,27 @@
     font-size: 1.2rem;
     font-weight: 700;
 }
- body{
-    background-image: url("imagens/fundo.jpg");
-    background-color: #8e7c0c;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    width: 100%; 
- }
 
- #titulo{
-    font-size: 1.7em;
-    margin-top: 0px;
-    margin-bottom: 15px;
+/*CONFIG DA IMAGEM DO FUNDO*/
+#img_fundo{
+    background: url('imagens/fundo.jpg') center center no-repeat fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
 }
 
-#infoo{
-    float: right;
-}
-
-#fundo{
-    
-    /*display: flex;*/
-    flex-direction: row-reverse;
-    
+/*CONFIG DO FUNDO GERAL*/
+#container{ 
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.separador{
-    margin-top: 15px;
-    padding-bottom: 20px;
-}
-
-.container{
-    margin: auto;
-
-
+/*CONFIG FUNDO DOS ELEMENTOS*/
+.containerCont{
+    margin: 15px;
     font-weight: 700;
     background-color: rgb(255, 188, 17);
     width: 300px;
@@ -49,6 +34,14 @@
     border-radius: 10px;
 }
 
+/*CONFIG DO "CHURRASCOMETRO"*/
+ #titulo{
+    font-size: 1.7em;
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+/*CONFIG DOS ELEMENTOS DE CAPTURA*/
 input{
     width: 100%;
     display: block;
@@ -63,6 +56,78 @@ button{
     margin: 5px;
 }
 
+/*IMPORTAÇÃO DE DADOS DO JS*/
+#resultado2{
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/*CONFIG DE ESTRUTURA DO BALÃO DE INFORMAÇÃO*/
+#controle{
+    display: none;
+    margin-left: 12px;
+}
+
+#conclusao{
+    display: block;
+    margin-bottom:15px;
+    margin-right: 15px;
+    font-weight: 700;
+    background-color: rgb(255, 188, 17);
+    padding: 15px;
+    border-radius: 20px;
+    animation: mymove 1.3s;
+}
+
+.alinhamento{
+    text-align: center;
+    margin: 5px;
+}
+
+
+/*CONFIG DA TABELA DE INFORMAÇÕES*/
+.tabela{  
+    margin: 0 auto;
+    border: 2px solid black;
+}
+
+table tr td{
+    
+    padding: 5px;
+    border: 2px solid black;
+}
+
+.animacao{
+    margin-bottom:15px;
+    margin-right: 15px;
+    font-weight: 700;
+    background-color: rgb(255, 188, 17);
+    padding: 15px;
+    border-radius: 20px;
+    animation: mymove 1.3s;
+}
+
+/*ANIMAÇÃO DO BALÃO DE INFORMAÇÃO*/
+@keyframes mymove{
+    0%{
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    50%{
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+/*IMPORTAÇÕES DO JS PARA HTML*/
 .format{
     display: flex;
     align-items: center;
@@ -72,13 +137,6 @@ button{
 .img_prod{
     padding: 5px;
     width: 30px;
-}
-
-#resultado2{
-    margin: 5px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
 }
 
 #divChurras{
@@ -111,74 +169,20 @@ button{
     background-color: rgb(255, 188, 17);
 }
 
-/* TESTE BALÃO */
-.texto{
-    font-size: 1.2em; 
-}
 
-.ali{
-    text-align: center;
-    margin: 5px;
-}
-
-.tabela{
-    
-    margin: 0 auto;
-    border: 2px solid black;
-}
-
-table tr td{
-    
-    padding: 5px;
-    border: 2px solid black;
-}
-
-.animacao{
-    margin-bottom:15px;
-    margin-right: 15px;
-    font-weight: 700;
-    background-color: rgb(255, 188, 17);
-    padding: 15px;
-    border-radius: 20px;
-    animation: mymove 1.3s;
-}
-
-#conclusao{
-    display: block;
-    margin-bottom:15px;
-    margin-right: 15px;
-    font-weight: 700;
-    background-color: rgb(255, 188, 17);
-    padding: 15px;
-    border-radius: 20px;
-    animation: mymove 1.3s;
-}
-
-.controle2{
-    float: right;
-}
-
-@keyframes mymove{
-    0%{
-        transform: scale(0.1);
-        opacity: 0;
-    }
-    50%{
-        transform: scale(1.2);
-        opacity: 1;
-    }
-    100%{
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
+/*RESPONSIVIDADE*/
 @media (max-width: 1200px){
     #fundo{
-        display: flex;
-        flex-direction: column-reverse;
-        
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
     }
+}
+
+@media (max-width: 500px){
+    #img_fundo{
+        background: url('imagens/fundo.jpg') right no-repeat fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover; 
+     }
 }

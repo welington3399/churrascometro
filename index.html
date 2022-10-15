@@ -9,69 +9,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="imagens/churrasqueira2.png">
-    <title">Churrascômetro</title>
 </head>
-<body>
-    <div id="fundo">
-        <div class="controle2">
-            <div id="conclusao">
-                <p class="ali">tabela de valores usada para calculos</p>
-                <table class="tabela">
-                    <tr>
-                        <td></td>
-                        <td>carnes</td>
-                        <td>bebidas alcoolicas</td>
-                        <td>bebidas sem alcool</td>
-                    </tr>
-                    <tr>
-                        <td>&lt 5h</td>
-                        <td>400g</td>
-                        <td>1200ml</td>
-                        <td>1000ml</td>
-                    </tr>
-                    <tr>
-                        <td>&gt 6h</td>
-                        <td>600g</td>
-                        <td>2000ml</td>
-                        <td>1500ml</td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div id="novo">
-            <p></p>
-        </div>
+<body id="img_fundo">
+<!-- INÍCIO -->
+    <div id="container">
 
-        <div id="infoo">
-
-        </div>
-        
-        <div class="separador">
-
-            <div class="container">
-                <h1 id="titulo">Churrascômetro</h1>
-                <input id="adultos" name="adultos" type="number" placeholder="Adultos">
-                <input id="criancas" name="criancas" type="number" placeholder="Crianças">
-                <input id="horas" name="horas" type="number" placeholder="Horas (h)">
-                <button onclick="calcular()">Calcular</button>
-                <button onclick="toggle()">+info/-info</button>`
-                
-        
-                <div id="resultado">
-        
-                </div>
-            </div>
+<!-- COLETA DE DADOS -->            
+            <div class="separador">
+    
+                <div class="containerCont">
+                    <h1 id="titulo">Churrascômetro</h1>
+                    <input id="adultos" name="adultos" type="number" placeholder="Adultos">
+                    <input id="criancas" name="criancas" type="number" placeholder="Crianças">
+                    <input id="horas" name="horas" type="number" placeholder="Horas (h)">
+                    <button onclick="calcular()">Calcular</button>
+                    <button onclick="toggle()">+info/-info</button>
+                    
+<!-- RESULTADO DOS DADOS QUE VEM DO JS-->            
+                    <div id="resultado">
             
-        </div>
-
-
-
+                    </div>
+                </div>
+                
+            </div>
+<!-- DISTRIBUIÇÃO DOS ALIMENTOS -->
+            <div id="resultado2">
+    
+            </div>
+<!-- BALÃO DE INFORMAÇÕES -->
+            <div id="controle">
+                <div id="conclusao">
+                    <p class="alinhamento">tabela de valores usada para calculos</p>
+                    <table class="tabela">
+                        <tr>
+                            <td></td>
+                            <td>carnes</td>
+                            <td>bebidas alcoolicas</td>
+                            <td>bebidas sem alcool</td>
+                        </tr>
+                        <tr>
+                            <td>&lt 5h</td>
+                            <td>400g</td>
+                            <td>1200ml</td>
+                            <td>1000ml</td>
+                        </tr>
+                        <tr>
+                            <td>&gt 6h</td>
+                            <td>600g</td>
+                            <td>2000ml</td>
+                            <td>1500ml</td>
+                        </tr>
+                    </table>
+                </div>  
+            </div>
+            <!-- div que faz sumir -->
+            <div id="novo"></div>
     </div>
-    <div id="resultado2">
-  
-    </div>
-
 
     <script src="scripts.js"></script>
+
+<!-- FIM -->
 </body>
 </html>

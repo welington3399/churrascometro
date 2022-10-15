@@ -1,10 +1,14 @@
-//CALCULO DE INSUMOS
-
+//CALCULOS DE INSUMOS
+    //ATRIBUINDO VARIÁVEIS
 let inputAdultos = document.getElementById("adultos");
 let inputCriancas = document.getElementById("criancas");
 let inputHoras = document.getElementById("horas");
-
+    
 let resultado = document.getElementById("resultado");
+    //FIM DA ATRIBUIÇÃO
+
+console.log("dados coletados...")
+
 
 function calcular(){
     console.log("calculando...");
@@ -16,7 +20,9 @@ function calcular(){
     let qtdTotalCarnes = carnesPP(horas) * adultos + (carnesPP(horas) / 2 * criancas);
     let totAlcolicas = alcolicaPP(horas) * adultos;
     let totSemAlcool = SemAlcoolPP(horas) * adultos + (SemAlcoolPP(horas) / 2 * criancas);
+//FIM DOS CALCULOS DE INSUMOS
 
+//DADOS QUE SERÃO IMPRESSOS NO HTML
     resultado.innerHTML = `<p><br><b>Voce vai precisar de: </b></p>`
     resultado.innerHTML += `<div class="format">
         <img class="img_prod" src="imagens/carne.png" alt="">
@@ -34,9 +40,12 @@ function calcular(){
         </div>       
         `
     
-    resultado.innerHTML += `<button href="#resultado2" onclick="mais()">mostrar mais</button>`
-}
+    resultado.innerHTML += `<button onclick="mais()">mostrar mais</button>`
 
+}
+//FIM DOS DADOS QUE SERÃO IMPRESSOS NO HTML
+
+//VERIFICAÇÃO DAS HORAS INFORMADAS PELO USUÁRIO
 function carnesPP(horas){
     if(horas >= 6){
         return 650;
@@ -60,55 +69,22 @@ function SemAlcoolPP(horas){
         return 1000;
     }
 }
+//FIM DA VERIFICAÇÃO DAS HORAS INFORMADAS PELO USUÁRIO
 
-// BALÃO DE AVISO
 
-function info (){
-    console.log("balao")
 
-    infoo.innerHTML = `
-        <div class="animacao">
-            <p class="ali">tabela de valores usada para calculos</p>
-            <table class="tabela">
-                <tr>
-                    <td></td>
-                    <td>carnes</td>
-                    <td>bebidas alcoolicas</td>
-                    <td>bebidas sem alcool</td>
-                </tr>
-                <tr>
-                    <td>&lt 5h</td>
-                    <td>400g</td>
-                    <td>1200ml</td>
-                    <td>1000ml</td>
-                </tr>
-                <tr>
-                    <td>&gt 6h</td>
-                    <td>600g</td>
-                    <td>2000ml</td>
-                    <td>1500ml</td>
-                </tr>
-            </table>
-        </div>
-    `
-}
-
-//DIVISAO DAS CARNES
-//VALOR DAS CARNES COM %  DIFERENTES
-//50%, 20%, 30%
-//CARNE VERM, FRANGO, LINGUIÇA
-
+//FUNÇÃO PARA CALCULO DA DIVISÃO DOS INSUMOS
 function mais(){
-    console.log("somando...")
 
     let adultos = inputAdultos.value;
     let criancas = inputCriancas.value;
     let horas = inputHoras.value;
-
+//DIVISAO DAS CARNES
+    console.log("somando carnes...")
     let qtdTotalCarnes = carnesPP(horas) * adultos + (carnesPP(horas) / 2 * criancas);
 
     let vCarnes = qtdTotalCarnes.value;
-
+    //50%, 20%, 30%
     let carneV = qtdTotalCarnes * 50 /100; 
     let frango = qtdTotalCarnes * 20 /100;
     let linguica = qtdTotalCarnes * 30 /100;
@@ -128,16 +104,13 @@ function mais(){
             <p>${(frango / 1000).toFixed(2)} Kg de frango</p>
         </div>
     </div>`
+//FIM DIVISAO DAS CARNES
 
-    console.log(linguica)
-
-    // DIVISAO DAS BEBIDAS ALCOOLICAS
-    // 30% shoop 40% cerveja 30% dinks
-
+// DIVISAO DAS BEBIDAS ALCOOLICAS
     console.log("somando alcoolicas...")
 
     let totAlcolicas = alcolicaPP(horas) * adultos;
-
+    // 30% shoop 40% cerveja 30% dinks
     let cerveja = totAlcolicas * 40 /100; 
     let shoop = totAlcolicas * 30 /100;
     let drinks = totAlcolicas * 30 /100;
@@ -157,18 +130,19 @@ function mais(){
             <p>${Math.ceil(drinks / 355)} drinks</p>
         </div>
     </div>`
+// DIVISAO DAS BEBIDAS ALCOOLICAS
 
-    // DIVISAO DAS BEBIDAS SEM ALCOOL
-    // 30% shoop 40% cerveja 30% dinks
-
-    console.log("somando alcoolicas...")
+//DIVISAO DAS BEBIDAS SEM ALCOOL
+    console.log("somando sem alcool...")
 
     let totSemAlcool = SemAlcoolPP(horas) * adultos + (SemAlcoolPP(horas) / 2 * criancas);
-
+    // 30% shoop 40% cerveja 30% dinks
     let refrigerante = totSemAlcool * 50 /100; 
     let suco = totSemAlcool * 30 /100;
     let agua = totSemAlcool * 20 /100;
+//FIM DA DIVISAO DAS BEBIDAS SEM ALCOOL
 
+//IMPRESSÃO DAS BEBIDAS SEM ALCOOL NO HTML
     resultado2.innerHTML +=
     `<div  id="divSemAlcool">
         <div class="format">
@@ -184,17 +158,20 @@ function mais(){
             <p>${Math.ceil(agua / 2000)} agua</p>
         </div>
     </div>`
+//FIM IMPRESSÃO DAS BEBIDAS SEM ALCOOL NO HTML
 }
+//FUNÇÃO PARA CALCULO DA DIVISÃO DOS INSUMOS
 
+//FUNÇÃO DO BOTAO "+info/-info" PARA FECHAR E ABRIR BALÃO DE INFORMAÇÃO
 function toggle() {
-    conclusao = document.getElementById("conclusao");
+    controle2 = document.getElementById("controle");
     novo = document.getElementById("novo");
 
-    if(conclusao.style.display == "none"){
-    conclusao.style.display = "block";
-    novo.style.display = "none";
+    if(controle2.style.display == "block"){
+    controle2.style.display = "none";
     } else {
-    conclusao.style.display = "none";
-    novo.style.display = "block";
+    controle2.style.display = "block";
     }
 }
+
+//FIM FUNÇÃO DO BOTAO "+info/-info" PARA FECHAR E ABRIR BALÃO DE INFORMAÇÃO
